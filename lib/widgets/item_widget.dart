@@ -13,7 +13,12 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print("${item.name} pressed");
         },
-        leading: Image.network(item.image),
+        // leading:
+        //     CircleAvatar(radius: 30, backgroundImage: NetworkImage(item.image)),
+        leading: Image.network(
+          item.image,
+          width: 50,
+        ),
         title: Text(item.name),
         subtitle: Text(item.desc),
         trailing: Text(
