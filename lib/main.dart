@@ -15,7 +15,7 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int day = 1;
+    // int day = 1;
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: Mythemes.lightTheme(context),
