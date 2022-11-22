@@ -17,7 +17,11 @@ class CartPage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [_CartList().p32().expand(), Divider(), _CartTotal()],
+        children: [
+          _CartList().p32().expand(),
+          Divider(),
+          _CartTotal(),
+        ],
       ),
     );
   }
@@ -39,7 +43,10 @@ class _CartTotal extends StatelessWidget {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(Mythemes.darkBluish)),
-              onPressed: () {},
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: "Buying is not supported yet.".text.make()));
+              },
               child: Text(
                 "Buy",
                 style: TextStyle(color: Colors.white),
@@ -68,7 +75,7 @@ class _CartListState extends State<_CartList> {
           icon: Icon(Icons.remove_circle_outline),
           onPressed: () {},
         ),
-        title: "item 1".text.make(),
+        title: "item added".text.make(),
       ),
     );
   }
