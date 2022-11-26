@@ -1,8 +1,9 @@
 class CatalogModel {
   // single ton class
-  static final catModel = CatalogModel._internal();
-  CatalogModel._internal();
-  factory CatalogModel() => catModel;
+  // static final catModel = CatalogModel._internal();
+  // CatalogModel._internal();
+  // factory CatalogModel() => catModel;
+  // made these as comments because now they are not necessary as we use the vxstate
 
   static List<Item> products = [];
 

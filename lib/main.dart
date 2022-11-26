@@ -1,3 +1,4 @@
+import 'package:first_app/core/store.dart';
 import 'package:first_app/pages/cart_page.dart';
 import 'package:first_app/pages/home_page.dart';
 import 'package:first_app/pages/login_page.dart';
@@ -5,9 +6,10 @@ import 'package:first_app/utils/routes.dart';
 import 'package:first_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(VxState(child: Myapp(), store: MyStore()));
 }
 
 class Myapp extends StatelessWidget {

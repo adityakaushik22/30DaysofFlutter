@@ -1,12 +1,15 @@
 import 'dart:ffi';
 
+import 'package:first_app/core/store.dart';
 import 'package:first_app/models/catalog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel {
   // single ton class, so that this will not create new instances in new fils when we need the object of this class
-  static final cartModel = CartModel._internal();
-  CartModel._internal();
-  factory CartModel() => cartModel;
+  // static final cartModel = CartModel._internal();
+  // CartModel._internal();
+  // factory CartModel() => cartModel;
+  // made these as comments because now they are not necessary as we use the vxstate
 
   //catalog field
   late CatalogModel _catalog;
@@ -37,5 +40,15 @@ class CartModel {
   // remove item
   void remove(Item item) {
     _itemIds.remove(item.id);
+  }
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store?.cart._itemIds.add(item.id);
   }
 }
