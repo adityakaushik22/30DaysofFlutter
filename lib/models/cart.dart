@@ -3,6 +3,11 @@ import 'dart:ffi';
 import 'package:first_app/models/catalog.dart';
 
 class CartModel {
+  // single ton class, so that this will not create new instances in new fils when we need the object of this class
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   //catalog field
   late CatalogModel _catalog;
 

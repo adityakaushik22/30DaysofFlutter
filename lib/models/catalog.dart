@@ -1,4 +1,9 @@
 class CatalogModel {
+  // single ton class
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() => catModel;
+
   static List<Item> products = [];
 
   // get items by the id
