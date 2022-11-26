@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:first_app/core/store.dart';
 import 'package:first_app/models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
